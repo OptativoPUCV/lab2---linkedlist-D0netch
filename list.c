@@ -136,11 +136,11 @@ void * popBack(List * list) {
 
 void *popCurrent(List *list) {
     if (list == NULL || list->current == NULL) {
-        return NULL; 
+        return NULL;
     }
 
-    Node *nodeToDelete = list->current; 
-    void *data = nodeToDelete->data;
+    Node *nodeToDelete = list->current;
+    void *data = nodeToDelete->data; 
 
     if (nodeToDelete->prev != NULL) {
         nodeToDelete->prev->next = nodeToDelete->next;
@@ -158,9 +158,10 @@ void *popCurrent(List *list) {
         list->current = list->current->next;
     } else {
         list->current = list->current->prev;
+    }
 
     free(nodeToDelete);
-    return data; 
+    return data;
 }
 
 void cleanList(List * list) {
