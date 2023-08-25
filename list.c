@@ -60,8 +60,8 @@ void *lastList(List *list) {
         return NULL;
     }
 
-    list->current = list->tail
-    return list->current->data
+    list->current = list->tail;
+    return list->current->data;
 }
 
 void * prevList(List * list) {
