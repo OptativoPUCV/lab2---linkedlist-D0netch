@@ -121,3 +121,13 @@ Fri 25 Aug 2023 08:20:39 PM UTC:
  tests:  10|2
 total_score: 45/70
 487ea47
+Fri 25 Aug 2023 08:21:46 PM UTC: 
+ list.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+list.c: In function ‘pushFront’:
+list.c:90:5: error: expected ‘;’ before ‘if’
+   90 |     if (list->head != NULL) {
+      |     ^~
+Compilation failed
+6eb323a
