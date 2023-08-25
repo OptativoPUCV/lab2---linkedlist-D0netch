@@ -134,8 +134,33 @@ void * popBack(List * list) {
     return popCurrent(list);
 }
 
-void * popCurrent(List * list) {
-    return NULL;
+void *popCurrent(List *list) {
+    if (list == NULL || list->current == NULL) {
+        return NULL; 
+    }
+
+    Node *nodeToDelete = list->current; 
+    void *data = nodeToDelete->data;
+
+    if (nodeToDelete->prev != NULL) {
+        nodeToDelete->prev->next = nodeToDelete->next;
+    } else {
+        list->head = nodeToDelete->next;
+    }
+
+    if (nodeToDelete->next == NULL) {
+        nodeToDelete->next->previ = nodeToDelete->prev;
+    } else {
+        list->tail = nodeToDelete->prev;
+    }
+
+    if (list->current->next != NULL) {
+        list->current = list->current->next;
+    } else {
+        list->current = list->current->prev
+
+    free(nodeToDelete);
+    return data; 
 }
 
 void cleanList(List * list) {
