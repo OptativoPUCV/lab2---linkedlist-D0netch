@@ -148,8 +148,8 @@ void *popCurrent(List *list) {
         list->head = nodeToDelete->next;
     }
 
-    if (nodeToDelete->next == NULL) {
-        nodeToDelete->next->previ = nodeToDelete->prev;
+    if (nodeToDelete->next != NULL) {
+        nodeToDelete->next->prev = nodeToDelete->prev;
     } else {
         list->tail = nodeToDelete->prev;
     }
@@ -157,7 +157,7 @@ void *popCurrent(List *list) {
     if (list->current->next != NULL) {
         list->current = list->current->next;
     } else {
-        list->current = list->current->prev
+        list->current = list->current->prev;
 
     free(nodeToDelete);
     return data; 
